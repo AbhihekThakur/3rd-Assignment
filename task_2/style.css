@@ -1,0 +1,496 @@
+@font-face {
+    font-family: 'bebas';
+    src: url('./BebasNeue-Regular.ttf');
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'bebas',sans-serif;
+}
+html,
+body {
+    height:100%;
+    width:100%;
+    background-color: black;
+}
+.container{
+    height: 100%;
+    width: 100%;
+    background-color: #f8f1e7;
+    border-radius: 40px;
+    overflow: hidden;
+    position: relative;
+    padding: 8px 50px;
+    display: flex;
+    flex-direction: column;
+}
+.container::before,
+.container::after{
+    content: "";
+
+    background-image: radial-gradient(circle, #f6e0c2 3px, transparent 2px);
+    background-size:20px 20px ;
+    mask-image: radial-gradient(circle,black 40%, transparent 70%);
+}
+.container::before{
+    width: 150px;
+    height: 100px;
+    border-radius: 50px;
+    position: absolute;
+    top:70px;
+    right: -50px;
+}
+.container::after{
+    width: 150px;
+    height: 100px;
+    border-radius: 50px;
+    position: absolute;
+    bottom:50px;
+    left: -80px;
+}
+header{
+    height: 45px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+header nav{
+    height: 100%;
+    width: 30%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-left: 90px;
+}
+nav h4{
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: 1px;
+}
+nav h4:nth-child(1){
+    position: relative;
+}
+h4:nth-child(1)::after{
+    content: "";
+    position: absolute;
+    width: 40px;
+    height: 3px;
+    left: 50%;
+    bottom: -12px;
+    transform: translateX(-50%);
+    background: radial-gradient(circle, green 2px, transparent 2px)center /6px 6px no-repeat,
+    linear-gradient(to right, green 0 37%, transparent 37% 63%, green 63% 100%) ;
+}
+#search{
+    height: 100%;
+    width: 18%;
+    padding: 5px 0;
+    position: relative;
+    display:flex;
+    align-items: center;
+    
+}
+#search .ri-search-line{
+    position: absolute;
+    left: 15px;
+    color: #f4a52c;
+    font-size: 16px;
+}
+#search input{
+    height: 100%;
+    width: 100%;
+    border-radius: 25px;
+    padding: 0 40px;
+    border:none ;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+}
+.line{
+    position: absolute;
+    right: 45px;
+    background-color: black;
+    height: 45%;
+    width: 3px;
+
+}
+.ri-shopping-bag-fill{
+    position: absolute;
+    font-size: 20px;
+    right: 15px;
+}
+.notification{
+     height: 15px;
+     width: 15px;
+     font-size: 10px;
+     color: white;
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     background-color: red;
+     border-radius: 50%;
+     position: absolute;
+     top: 0;
+     right:0 ;
+}
+main{
+    height: calc(75% - 45px);
+    width: 100%;
+    display: flex;
+}
+main .left-main{
+    height: 100%;
+    width:41%;
+    padding: 35px 0 0 25px;
+}
+.left-main .tag{
+    height: fit-content;
+    width: fit-content;
+    border-radius: 50px;
+    font-size: 13px;
+    gap: 5px;
+    border: 2px solid green;
+    color: green;
+    background-color:rgba(0, 128, 0, 0.135);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 5px 15px;
+    letter-spacing: 1px;
+}
+.left-main h1{
+    font-size: 76px;
+    line-height: 75px;
+    font-weight: 600;
+    letter-spacing: 3px;
+    margin-top: 20px;
+}
+h1 span{
+    color: rgb(2, 98, 2);
+}
+.left-main img{
+    transform: rotate(-2deg);
+}
+.left-main .text{
+    font-family:Arial, Helvetica, sans-serif;
+    font-size: 15px;
+    color: rgba(0, 0, 0, 0.45);
+    margin: 10px;
+}
+.left-main .btn{
+    width: 85%;
+    height: 13%;
+    display: flex;
+    gap: 40px;
+    align-items: baseline;
+    margin-top: 25px;
+}
+.btn #add-to-cart{
+    height: 100%;
+    width: 50%;
+    background-color:black;
+    color: white;
+    display: flex;
+    border-radius: 50px;
+    padding: 8px;
+    gap: 35px;
+    align-items: center;
+    font-size: 14px;
+    font-weight: 400;
+    letter-spacing: 2px;
+}
+#add-to-cart .cart{
+    height: 38px;
+    width: 38px;
+    border-radius: 50%;
+    background-color: #f4a52c;
+    color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 25px;
+}
+.btn .how-many{
+    height: 90%;
+    width: 32%;
+    border-radius: 50px;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    padding: 15px 3px;
+}.how-many .no{
+    color: red;
+    font-size: 20px;
+}
+.how-many button{
+    height: 100%;
+    width: 20%;
+    padding: 2px;
+    background: none;
+    border: none;
+    font-weight: 700;
+}
+.how-many #minus{
+    border-right: 2px solid black ;
+    padding-right: 10px;
+}
+.how-many #add{
+    border-left: 2px solid black ;
+    padding-left: 10px;
+    color: green;
+}
+.flovour {
+    width: 95%;
+    height: 12%;
+    margin-top: 25px;
+    display: flex;
+    justify-content: space-between;
+
+}
+.flovour .icon-box{
+    height: 100%;
+    width: 35%;
+    display: flex;
+}
+.icon-box .icon{
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    margin-right: 10px;
+    background: none;
+    border: 2px solid black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.icon-box #green{
+   border: 2px solid green; 
+}
+.icon-box #yellow{
+   border: 2px solid rgb(255, 208, 0); 
+}
+.icon-box #red{
+   border: 2px solid #da2e38; 
+}
+.icon-box .icon-text{
+    height: 100%;
+    width: calc(100% - 65px);
+    padding-top: 10px;
+}
+.icon-text h5{
+    font-size: 15px;
+    letter-spacing: 1px;
+}
+.icon-text p{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 12px;
+    font-weight: 700;
+    color: rgba(0, 0, 0, 0.534);
+}
+
+main .right-main{
+    height: 100%;
+    width: 59%;
+    position: relative;
+}
+.right-main img{
+    position: absolute;
+    bottom: -30px;
+    left: -50px;
+}
+.right-main .qualities{
+    height: 60%;
+    width: 35%;
+    padding: 10px;  
+    position: absolute;
+    right: 0;
+    top: 25%;
+    background: none;
+}
+.qualities::before{
+    content: "";
+    position: absolute;
+    left: 35px;
+    top: 20px;
+    bottom: 80px;
+    border-left: 2px dotted #e6a83a;
+    z-index: 0;
+}
+.qualities .icon-box{
+    position: relative;
+    height: 35%;
+    width: 100%;
+    display: flex;
+    z-index: 1;
+}
+.qualities .icon-box .icon{
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    margin-right: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.qualities .icon-box .icon img{
+    position: static;
+    width: 25px;
+    height: 25px;
+    object-fit: contain;
+}
+.qualities .icon-box #green{
+  background-color: green;
+}
+.qualities .icon-box #yellow{
+   background-color:  rgb(255, 208, 0); 
+}
+.qualities .icon-box #red{
+   background-color:  #da2e38; 
+}
+.qualities .icon-box .icon-text{
+    height: 100%;
+    width: calc(100% - 65px);
+    padding-top: 2px;
+    margin-left: 10px;
+}
+.qualities .icon-text h5{
+    font-size: 15px;
+    letter-spacing: 1px;
+}
+.qualities .icon-text p{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 12px;
+    margin-top: 2px;
+    color: rgba(0, 0, 0, 0.534);
+}
+section{
+    height: 25%;
+    width: 97%;
+    border-radius: 25px;
+    background-image: url('./images/section-background.png');
+    background-position: center;
+    margin-left: 15px;
+    padding: 30px 40px 20px 30px;
+    display: flex;
+    gap: 30px;
+
+}
+section .info{
+    height: 100%;
+    width: 15%;
+    padding:10px 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.info h2{
+    line-height: 25px;
+    color: white;
+    letter-spacing: 2px;
+    font-weight: 600;
+    position: relative;
+}
+.info h2::after{
+    content: "";
+    position: absolute;
+    width: 50px;
+    height: 3px;
+    left: 19%;
+    bottom: -10px;
+    transform: translateX(-50%);
+    background: radial-gradient(circle, #f78327 2px, transparent 2px)center /6px 6px no-repeat,
+    linear-gradient(to right, #f78327  0 35%, transparent 35% 65%, #f78327 65% 100%) ;
+}
+.info .move{
+    width: 70%;
+    height: 35%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.info #left{
+    height: 37px;
+    width: 37px;
+    background-color: rgba(255, 255, 255, 0.805);
+    color: rgba(0, 128, 0, 0.64);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.info #right{
+    height: 40px;
+    width: 40px;
+    background-color: white;
+    color: green;
+    font-size: 20px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+section .cards{
+    height: 100%;
+    width: 24%;
+    background-color: white;
+    border-radius: 20px;
+    padding:10px 35px 10px 150px;
+    display: flex;
+    position: relative;
+}
+.cards img{
+    position: absolute;
+    bottom: -2px;
+    left: 10px;
+}
+.cards .info-text{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+.info-text h5{
+    font-size: 17px;
+    font-weight: 500;
+}
+.info-text .star-icon{
+    width: 100%;
+    height: 15%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.star-icon .star{
+    letter-spacing: -2px;
+    font-size: 15px;
+    color: #f4a52c;
+}
+.star-icon p{
+    font-size: 12px;
+    font-family: 'Times New Roman', Times, serif;
+    color: rgba(0, 0, 0, 0.545);
+    font-weight: 600;
+}
+.info-text h3{
+    font-size: 20px;
+    font-weight: 500;
+}
+.info-text .order-now{
+    display: flex;
+    justify-content: space-evenly;
+    width: 100%;
+    height: 25%;
+    border-radius: 25px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    border: none ;
+    background-color: #da2e38;
+    color: white;
+    letter-spacing: 0.5px;
+    font-weight: 500;
+}
